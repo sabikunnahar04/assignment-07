@@ -26,7 +26,7 @@ const NavLinks = async () => {
 
                         <Link
                             key={n.id}
-                            href={n.id}
+                            href={`/category/${n.slug}`}
                             className="whitespace-nowrap text-[11px] text-gray-700 hover:text-red-700"
                         >
                             <span className="mr-1">

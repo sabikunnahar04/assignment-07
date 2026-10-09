@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 type Product = {
   id: string | number;
   image: string;
@@ -29,7 +29,11 @@ export default function DecreasedProducts({
 
       <div className="product-grid">
         {decreasedProducts.map((product) => (
-          <div className="product-card" key={product.id}>
+          <Link
+  href={`/product/${product.id}`}
+  className="product-card block"
+  key={product.id}
+>
             <div className="product-info">
               <div className="product-image">
                 {product.image}
@@ -53,7 +57,7 @@ export default function DecreasedProducts({
                 ↓ {product.change.pct}%
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
