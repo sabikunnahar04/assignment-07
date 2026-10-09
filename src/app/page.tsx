@@ -1,6 +1,6 @@
 
 
-// import Hero from "@/component/Hero";
+import Hero from "@/component/Hero";
 // import IncreasedProducts from "@/component/Increase";
 import Marquee from "@/component/Marquee";
 
@@ -14,7 +14,7 @@ export default async function Home() {
   return (
     <div>
       <Marquee />
-      {/* <Hero /> */}
+      <Hero />
 
       {/* <IncreasedProducts products={data} /> */}
     </div>
