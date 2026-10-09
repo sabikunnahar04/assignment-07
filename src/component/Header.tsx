@@ -1,0 +1,65 @@
+import React from 'react';
+
+import Image from "next/image";
+// import NavLinks from "./NavLinks";
+
+const Header = () => {
+
+    const date = new Date().toLocaleDateString("bn-BD", {
+        dateStyle: "full",
+    });
+
+    return (
+        <header className="bg-white">
+
+            
+            <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+                
+                <div className="flex items-center gap-2">
+
+                    <Image
+                        className="w-9 h-9"
+                        height={50}
+                        width={50}
+                        src={"/logo-icon.png"}
+                        alt=""
+                    />
+
+                    <div>
+                        <h2 className="font-bold text-sm">
+                            বাজার দর
+                        </h2>
+
+                        <p className="text-[9px] text-gray-500">
+                            {date}
+                        </p>
+                    </div>
+
+                </div>
+
+
+               
+                <div className="flex items-center gap-2">
+
+                    <button className="text-xs px-4 py-2">
+                        সাইন ইন
+                    </button>
+
+                    <button className="bg-red-700 text-white text-xs px-4 py-2 rounded-md">
+                        সাইন আপ
+                    </button>
+
+                </div>
+
+            </div>
+
+
+           
+            {/* <NavLinks /> */}
+
+        </header>
+    );
+};
+
+export default Header;
