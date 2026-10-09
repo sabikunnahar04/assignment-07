@@ -1,65 +1,65 @@
-// import React from 'react';
-// import MarqueeText from "react-marquee-text";
-// import "react-marquee-text/dist/styles.css";
+import React from 'react';
+import MarqueeText from "react-marquee-text";
+import "react-marquee-text/dist/styles.css";
 
-// interface Head {
-//     id: string;
-//     nameBn: string;
-//     categoryIcon: string;
-//     today: string;
-// }
+interface Head {
+    id: string;
+    nameBn: string;
+    categoryIcon: string;
+    today: string;
+}
 
-// const Marquee = async () => {
+const Marquee = async () => {
 
-//     const res = await fetch(
-//         "https://api.abcz.workers.dev/api/bazardor/products"
-//     );
+    const res = await fetch(
+        "https://api.abcz.workers.dev/api/bazardor/products"
+    );
 
-//     const data: Head[] = await res.json();
+    const data: Head[] = await res.json();
 
-//     const products = data.slice(0, 10);
+    const products = data.slice(0, 10);
 
-//     return (
-//         <div className="border-b border-gray-200 bg-white">
+    return (
+        <div className="border-b border-gray-200 bg-white">
 
-//             <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto">
 
-//                 <MarqueeText
-//                     direction="right"
-//                     duration={10}
-//                 >
+                <MarqueeText
+                    direction="right"
+                    duration={10}
+                >
 
-//                     <div className="flex items-center gap-8 py-2">
+                    <div className="flex items-center gap-8 py-2">
 
-//                         {products.map((p) => (
+                        {products.map((p) => (
 
-//                             <span
-//                                 key={p.id}
-//                                 className="whitespace-nowrap text-[11px] text-gray-700"
-//                             >
+                            <span
+                                key={p.id}
+                                className="whitespace-nowrap text-[11px] text-gray-700"
+                            >
 
-//                                 <span className="mr-1">
-//                                     {p.categoryIcon}
-//                                 </span>
+                                <span className="mr-1">
+                                    {p.categoryIcon}
+                                </span>
 
-//                                 {p.nameBn}
+                                {p.nameBn}
 
-//                                 <span className="font-semibold ml-1">
-//                                     {p.today} টাকা/কেজি
-//                                 </span>
+                                <span className="font-semibold ml-1">
+                                    {p.today} টাকা/কেজি
+                                </span>
 
-//                             </span>
+                            </span>
 
-//                         ))}
+                        ))}
 
-//                     </div>
+                    </div>
 
-//                 </MarqueeText>
+                </MarqueeText>
 
-//             </div>
+            </div>
 
-//         </div>
-//     );
-// };
+        </div>
+    );
+};
 
-// export default Marquee;
+export default Marquee;
