@@ -1,8 +1,9 @@
 
 
 import Hero from "@/component/Hero";
-// import IncreasedProducts from "@/component/Increase";
+import IncreasedProducts from "@/component/Increase";
 import Marquee from "@/component/Marquee";
+import DecreasedProducts from "@/component/Decrease";
 
 export default async function Home() {
   const res = await fetch(
@@ -16,7 +17,8 @@ export default async function Home() {
       <Marquee />
       <Hero />
 
-      {/* <IncreasedProducts products={data} /> */}
+      <IncreasedProducts products={data} />
+      <DecreasedProducts products={data}/>
     </div>
   );
 }
