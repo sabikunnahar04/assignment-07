@@ -1,6 +1,7 @@
 "use client"
 
 import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
 
 const UserInfo = () => {
     const { data: session } = authClient.useSession();
@@ -25,13 +26,15 @@ const UserInfo = () => {
                     <button onClick={handleSignOut} className="btn btn-error btn-xs">সাইন আউট</button>
                 </div> : <div>
 
+                   <Link href={"/signin"}>
                     <button className="text-xs px-4 py-2">
                         সাইন ইন
-                    </button>
+                    </button></Link>
 
+                   <Link href={"/signup"}>
                     <button className="bg-red-700 text-white text-xs px-4 py-2 rounded-md">
                         সাইন আপ
-                    </button>
+                    </button></Link>
 
                 </div>
             }
