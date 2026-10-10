@@ -1,5 +1,6 @@
 "use client"
 import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 const SignInPage = () => {
     const onSubmit = async(e: React.SubmitEvent<HTMLElement>) => {
@@ -11,13 +12,29 @@ const SignInPage = () => {
         callbackURL:"/"
       })
      if(data){
+        toast.success("SignIn successfully")
         console.log(data);
        
      }
      if(error){
+        toast.error("your email or password is wrong")
         console.log(error);
      }
     }
+
+
+const handleGoogleSignIn = async () => {
+     const data = await authClient.signIn.social({
+    provider: "google",
+  });
+  console.log(data);
+};
+
+
+
+
+
+
     return (
        <div className="flex flex-col items-center justify-center mt-5">
         <h2 className="text-2xl font-bold text-red-700">সাইন ইন</h2>
@@ -34,6 +51,7 @@ const SignInPage = () => {
                     <button type="submit" className="btn bg-green-900 text-white mt-4">SignIn</button>
                 </fieldset>
             </form>
+            <button onClick = {handleGoogleSignIn} className="btn">Google দিয়ে চালিয়া যান </button>
         </div>
     );
 };
