@@ -23,12 +23,19 @@ const SignUpPage = () => {
     }
 
 
-    const handleGoogleSignUn = async () => {
+    const handleGoogleSignUp = async () => {
         const data = await authClient.signIn.social({
             provider: "google",
         });
         console.log(data);
     };
+
+    const handleGithubSignUp = async () => {
+     const data = await authClient.signIn.social({
+    provider: "github",
+  });
+  console.log(data);
+};
 
     return (
         <div className="flex flex-col items-center justify-center mt-5">
@@ -48,7 +55,8 @@ const SignUpPage = () => {
                     <button type="submit" className="btn bg-green-900 text-white mt-4">SignUp</button>
                 </fieldset>
             </form>
-            <button onClick={handleGoogleSignUn} className="btn">Google দিয়ে চালিয়া যান </button>
+            <button onClick={handleGoogleSignUp} className="btn">Google দিয়ে চালিয়া যান </button>
+            <button onClick = {handleGithubSignUp} className="btn">Github দিয়ে চালিয়া যান </button>
 
         </div>
     );

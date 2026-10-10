@@ -30,7 +30,12 @@ const handleGoogleSignIn = async () => {
   console.log(data);
 };
 
-
+const handleGithubSignIn = async () => {
+     const data = await authClient.signIn.social({
+    provider: "github",
+  });
+  console.log(data);
+};
 
 
 
@@ -52,6 +57,7 @@ const handleGoogleSignIn = async () => {
                 </fieldset>
             </form>
             <button onClick = {handleGoogleSignIn} className="btn">Google দিয়ে চালিয়া যান </button>
+            <button onClick = {handleGithubSignIn} className="btn">Github দিয়ে চালিয়া যান </button>
         </div>
     );
 };
