@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import React from "react";
+import toast from "react-hot-toast";
 
 const SignUpPage = () => {
     const onSubmit = async (e: React.SubmitEvent<HTMLElement>) => {
@@ -14,11 +15,15 @@ const SignUpPage = () => {
             callbackURL: "/"
         })
         if (data) {
+              toast.success("SignUp successfully")
             console.log(data);
             redirect("/");
+
         }
         if (error) {
+            toast.error("your email or password is wrong")
             console.log(error);
+
         }
     }
 

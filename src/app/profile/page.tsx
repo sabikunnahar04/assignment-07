@@ -4,6 +4,7 @@
 import { authClient } from "@/lib/auth-client";
 import { redirect, useRouter } from "next/navigation";
 import React from "react";
+import toast from "react-hot-toast";
 
 const ProfilePage = () => {
     const { data: session, isPending } = authClient.useSession();
@@ -23,7 +24,7 @@ const ProfilePage = () => {
             email: string;
         };
 
-        // নাম আপডেট
+        
         const { error } = await authClient.updateUser({
             name: user.name,
         });
@@ -33,7 +34,7 @@ const ProfilePage = () => {
             return;
         }
 
-        // ইমেইল পরিবর্তন
+        
         if (user.email !== session?.user.email) {
             const result = await authClient.changeEmail({
                 newEmail: user.email,
@@ -55,11 +56,22 @@ const ProfilePage = () => {
         redirect("/signin");
     }
 
-    const handleSignOut = async () => {
-        await authClient.signOut();
-        router.push("/signin");
-    };
+    // const handleSignOut = async () => {
+    //     await authClient.signOut();
+    //     router.push("/signin");
+    // };
 
+    const handleSignOut = async () => {
+    const { error } = await authClient.signOut();
+
+    if (error) {
+        toast.error("Sign out failed");
+        return;
+    }
+
+    toast.success("Sign out successfully");
+    router.push("/signin");
+};
     return (
         <div className="min-h-screen bg-base-200 p-6">
             <div className="card bg-base-100 mx-auto mt-8 max-w-lg shadow-xl">
