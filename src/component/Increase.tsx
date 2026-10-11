@@ -42,8 +42,8 @@ export default function IncreasedProducts({
 
               <div>
                 <h3>{product.nameBn}</h3>
-                <p className="category">
-                  {product.categoryNameBn}
+                <p >
+                  প্রতি কেজি 
                 </p>
               </div>
             </div>

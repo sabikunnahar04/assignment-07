@@ -66,8 +66,9 @@ export default function AllProducts({
 
                             <div>
                                 <h3>{product.nameBn}</h3>
-                                <p className="category">
-                                    {product.categoryNameBn}
+                                <p >
+                                    {/* {product.categoryNameBn} */}
+                                    প্রতি কেজি 
                                 </p>
                             </div>
                         </div>
