@@ -24,18 +24,22 @@ const SignInPage = () => {
 
 
     const handleGoogleSignIn = async () => {
-        const data = await authClient.signIn.social({
-            provider: "google",
-        });
-        console.log(data);
-    };
+  toast.loading("Google দিয়ে Sign In হচ্ছে...");
 
-    const handleGithubSignIn = async () => {
-        const data = await authClient.signIn.social({
-            provider: "github",
-        });
-        console.log(data);
-    };
+  await authClient.signIn.social({
+    provider: "google",
+    callbackURL: "/",
+  });
+};
+
+  const handleGithubSignIn = async () => {
+  toast.loading("GitHub দিয়ে Sign In হচ্ছে...");
+
+  await authClient.signIn.social({
+    provider: "github",
+    callbackURL: "/",
+  });
+};
 
 
 
