@@ -1,6 +1,9 @@
 import Image from "next/image";
 
 const Hero = () => {
+     const date = new Date().toLocaleDateString("bn-BD", {
+        dateStyle: "full",
+    });
     return (
         <section className="max-w-7xl mx-auto px-4 mt-5">
 
@@ -9,8 +12,9 @@ const Hero = () => {
                 <div>
 
                     <p className="text-green-600 text-[10px] font-medium mb-2">
-                        আজকের বাজারদর
+                        {date}
                     </p>
+
 
                     <h1 className="text-2xl font-bold text-gray-800">
                         আজকের বাজারের দাম এক নজরে

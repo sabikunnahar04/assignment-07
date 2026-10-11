@@ -81,7 +81,7 @@ export default async function ProductDetails({ params }: Props) {
         <th className="p-3">বিভাগ</th>
         <th className="p-3">সর্বনিম্ন</th>
         <th className="p-3">সর্বোচ্চ</th>
-        <th className="p-3">দাম</th>
+        <th className="p-3">গড়</th>
       </tr>
     </thead>
 
