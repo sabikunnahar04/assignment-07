@@ -43,7 +43,7 @@ const SignInPage = () => {
     return (
         <div className="flex w-full flex-col items-center justify-center px-4 py-5">
             <h2 className="text-2xl font-bold text-red-700">সাইন ইন</h2>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="w-full max-w-sm">
                 <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-sm border p-4">
                     <legend className="fieldset-legend">Login</legend>
 
