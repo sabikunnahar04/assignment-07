@@ -15,7 +15,7 @@ const SignUpPage = () => {
             callbackURL: "/"
         })
         if (data) {
-              toast.success("SignUp successfully")
+            toast.success("SignUp successfully")
             console.log(data);
             redirect("/");
 
@@ -36,32 +36,32 @@ const SignUpPage = () => {
     };
 
     const handleGithubSignUp = async () => {
-     const data = await authClient.signIn.social({
-    provider: "github",
-  });
-  console.log(data);
-};
+        const data = await authClient.signIn.social({
+            provider: "github",
+        });
+        console.log(data);
+    };
 
     return (
-        <div className="flex flex-col items-center justify-center mt-5">
+        <div className="flex w-full flex-col items-center justify-center px-4 py-5">
             <h2 className="text-2xl font-bold text-red-700">সাইন আপ </h2>
-            <form onSubmit={onSubmit}>
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <form onSubmit={onSubmit} className="w-full max-w-sm">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-sm border p-4">
                     <legend className="fieldset-legend">Login</legend>
                     <label className="label">Name</label>
-                    <input name="name" type="text" className="input w-md" placeholder="Name" />
+                    <input name="name" type="text" className="input w-full" placeholder="Name" />
 
                     <label className="label">Email</label>
-                    <input name="email" type="email" className="input w-md" placeholder="Email" />
+                    <input name="email" type="email" className="input w-full" placeholder="Email" />
 
                     <label className="label">Password</label>
-                    <input name="password" type="password" className="input w-md" placeholder="Password" />
+                    <input name="password" type="password" className="input w-full" placeholder="Password" />
 
                     <button type="submit" className="btn bg-green-900 text-white mt-4">SignUp</button>
                 </fieldset>
             </form>
-            <button onClick={handleGoogleSignUp} className="btn">Google দিয়ে চালিয়া যান </button>
-            <button onClick = {handleGithubSignUp} className="btn">Github দিয়ে চালিয়া যান </button>
+            <button onClick={handleGoogleSignUp} className="btn mt-3 w-full max-w-sm">Google দিয়ে চালিয়া যান </button>
+            <button onClick={handleGithubSignUp} className="btn mt-3 w-full max-w-sm">Github দিয়ে চালিয়া যান </button>
 
         </div>
     );
