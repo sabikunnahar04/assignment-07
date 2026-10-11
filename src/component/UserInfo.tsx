@@ -1,14 +1,15 @@
 
 "use client";
-
+import { useRouter, usePathname } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+
 
 const UserInfo = () => {
     const { data: session } = authClient.useSession();
     const user = session?.user;
     const router = useRouter();
+    const pathname = usePathname();
 
     const handleSignOut = async () => {
         await authClient.signOut();
@@ -53,19 +54,25 @@ const UserInfo = () => {
                     </ul>
                 </div>
             ) : (
-                <div className="flex items-center gap-2">
-                    <Link href="/signin">
-                        <button className="text-xs px-4 py-2">
-                            সাইন ইন
-                        </button>
-                    </Link>
+              <div className="flex items-center gap-2">
+    <Link
+        href="/signin"
+        className={`text-xs px-4 py-2 rounded-md ${
+            pathname === "/signin" ? "bg-red-700 text-white" : ""
+        }`}
+    >
+        সাইন ইন
+    </Link>
 
-                    <Link href="/signup">
-                        <button className="bg-red-700 text-white text-xs px-4 py-2 rounded-md">
-                            সাইন আপ
-                        </button>
-                    </Link>
-                </div>
+    <Link
+        href="/signup"
+        className={`text-xs px-4 py-2 rounded-md ${
+            pathname === "/signup" ? "bg-red-700 text-white" : ""
+        }`}
+    >
+        সাইন আপ
+    </Link>
+</div>
             )}
         </div>
     );
