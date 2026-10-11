@@ -9,6 +9,7 @@ type Product = {
     nameBn: string;
     categoryNameBn: string;
     today: number;
+    unit: string;
     change: {
         dir: string;
         pct: number;
@@ -36,7 +37,7 @@ export default function AllProducts({
     }
 
     return (
-        <section className="products-section">
+        <section id="সব-পণ্য" className="products-section">
             <div className="mb-5 flex items-center justify-between gap-3">
                 <h2 className="section-title">🛒 সব পণ্য</h2>
 
@@ -66,11 +67,15 @@ export default function AllProducts({
 
                             <div>
                                 <h3>{product.nameBn}</h3>
-                                <p >
-                                    {/* {product.categoryNameBn} */}
-                                    প্রতি কেজি 
-                                </p>
-                            </div>
+<p>
+  প্রতি {
+    product.unit === "kg" ? "কেজি" :
+    product.unit === "liter" || product.unit === "litre" ? "লিটার" :
+    product.unit === "dozen" ? "ডজন" :
+    product.unit === "piece" ? "পিস" :
+    product.unit
+  }
+</p>                            </div>
                         </div>
 
                         <div className="price-row">

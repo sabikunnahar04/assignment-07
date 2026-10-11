@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
-     const date = new Date().toLocaleDateString("bn-BD", {
+    const date = new Date().toLocaleDateString("bn-BD", {
         dateStyle: "full",
     });
     return (
@@ -25,14 +26,17 @@ const Hero = () => {
                         পণ্যের সর্বশেষ বাজারদর এক জায়গায় দেখুন।
                     </p>
 
-                    <button className="mt-4 bg-green-600 text-white text-xs px-5 py-2 rounded-md">
+                    <Link
+                        href="#সব-পণ্য"
+                        className="inline-block mt-4 bg-green-600 text-white text-xs px-5 py-2 rounded-md"
+                    >
                         সব পণ্যের দাম দেখুন
-                    </button>
+                    </Link>
 
                 </div>
 
 
-               
+
                 <div className="hidden sm:block">
 
                     <Image
