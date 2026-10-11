@@ -23,37 +23,20 @@ const SignInPage = () => {
     }
 
 
-// const handleGoogleSignIn = async () => {
-//      const data = await authClient.signIn.social({
-//     provider: "google",
-//   });
-//   console.log(data);
-// };
-
-
 const handleGoogleSignIn = async () => {
-  toast.loading("Google দিয়ে Sign In হচ্ছে...");
-
-  await authClient.signIn.social({
+     const data = await authClient.signIn.social({
     provider: "google",
-    callbackURL: "/",
   });
+  console.log(data);
 };
-// const handleGithubSignIn = async () => {
-//      const data = await authClient.signIn.social({
-//     provider: "github",
-//   });
-//   console.log(data);
-// };
 
 const handleGithubSignIn = async () => {
-  toast.loading("GitHub দিয়ে Sign In হচ্ছে...");
-
-  await authClient.signIn.social({
+     const data = await authClient.signIn.social({
     provider: "github",
-    callbackURL: "/",
   });
+  console.log(data);
 };
+
 
 
 
